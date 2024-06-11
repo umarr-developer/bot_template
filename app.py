@@ -15,7 +15,7 @@ async def main():
     set_logging(config=config)
 
     dp = Dispatcher(storage=MemoryStorage())
-    bot = Bot(token=config.bot.token, parse_mode='HTML')
+    bot = Bot(token=config.bot.token)
     db = await create_db_session(config)
 
     dp.include_router(router)
